@@ -1,0 +1,86 @@
+.cartContainer {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    text-align: center;
+    color: #333;
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin-top: 20px;
+    text-align: center; /* Center the total */
+    color: #444;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Center items vertically */
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+}
+
+li:last-child {
+    border-bottom: none; /* Remove border for last item */
+}
+
+button {
+    background-color: #d9534f; /* Red for danger */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 12px; /* Adjust padding */
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background-color: #c9302c; /* Darker red on hover */
+    transform: scale(1.05); /* Slight scaling effect */
+}
+
+p {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #666;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    h3 {
+        font-size: 1.3rem;
+    }
+
+    button {
+        padding: 6px 10px;
+        font-size: 0.9rem;
+    }
+
+    li {
+        flex-direction: column; /* Stack items vertically on small screens */
+        align-items: flex-start; /* Align to the start */
+        padding: 10px 0;
+    }
+}

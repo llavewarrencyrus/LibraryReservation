@@ -1,0 +1,133 @@
+.policyContainer {
+    margin: 20px 0;
+    padding: 35px;
+    background-color: #f8fafe; /* Softer background color for better contrast */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.policyTitle {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #2c3e50;
+}
+
+.policyDescription {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #34495e;
+    margin-bottom: 25px;
+}
+
+.tabs {
+    display: flex;
+    flex-wrap: wrap; /* Enable wrapping for tabs */
+    gap: 10px; /* Spacing between buttons */
+    margin-bottom: 20px;
+}
+
+.tabButton {
+    flex: 1;
+    min-width: 120px; /* Ensure minimum width for small screens */
+    padding: 10px 12px; /* Reduced padding for better fit */
+    border: none;
+    border-radius: 8px;
+    background-color: #dfe6e9;
+    color: #2c3e50;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    font-size: 15px; /* Reduced size for smaller screens */
+    text-align: center;
+}
+
+.tabButton:hover {
+    background-color: #b2bec3;
+}
+
+.tabButton.active {
+    background: linear-gradient(to right, #690f1b, #b32538, #741c26, #720f1c);
+    color: #ffffff;
+}
+
+.tabContent {
+    padding: 30px; /* Adjust spacing for smaller screens */
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 16px; /* Adjust text size for smaller screens */
+    line-height: 1.6; /* Slightly reduced line height */
+    color: #2c3e50;
+}
+
+/* Responsive Styles */
+@media (max-width: 900px) {
+    .policyContainer {
+        margin-top: 50px;
+        padding: 20px;
+    }
+
+    .policyTitle {
+        font-size: 24px;
+    }
+
+    .policyDescription,
+    .tabContent {
+        font-size: 16px;
+    }
+
+    .tabButton {
+        font-size: 14px; /* Smaller button font size for mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    .policyContainer {
+        margin-top: 50px;
+        padding: 15px; /* Tighter padding for smaller screens */
+    }
+
+    .tabs {
+        flex-direction: column; /* Stack tabs vertically for very small screens */
+        gap: 5px; /* Reduce spacing between tabs */
+    }
+
+    .tabButton {
+        width: 100%; /* Make tabs full-width */
+        padding: 8px 10px; /* Smaller padding */
+        font-size: 14px; /* Further reduce font size */
+    }
+
+    .policyTitle {
+        font-size: 20px;
+    }
+
+    .policyDescription {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    .tabContent {
+        font-size: 14px;
+
+    }
+}
+
+@media (max-width: 375px) {
+    .policyContainer {
+        margin-top: 50px;
+        padding: 20px;
+    }
+
+    .tabButton {
+        font-size: 13px; /* Even smaller text for ultra-small screens */
+    }
+
+    .policyTitle {
+        font-size: 18px;
+    }
+
+    .tabContent {
+        font-size: 13px;
+    }
+}

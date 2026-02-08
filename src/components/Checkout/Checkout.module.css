@@ -1,0 +1,95 @@
+/* Checkout.module.css */
+
+.checkoutContainer {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Center text */
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin-top: 20px;
+    color: #444;
+}
+
+.inputContainer {
+    margin-bottom: 20px;
+}
+
+input {
+    width: calc(50% - 10px);
+    padding: 10px;
+    margin: 0 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+li:last-child {
+    border-bottom: none;
+}
+
+.confirmButton {
+    background-color: #28a745; /* Green button */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%; /* Full width */
+    margin-top: 20px;
+}
+
+.confirmButton:hover {
+    background-color: #218838; /* Darker green on hover */
+}
+
+.resultMessage {
+    margin-top: 10px;
+    color: #d9534f; /* Red for error messages */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    h3 {
+        font-size: 1.3rem;
+    }
+
+    .confirmButton {
+        padding: 8px;
+        font-size: 0.9rem;
+    }
+
+    input {
+        width: 100%; /* Full width on small screens */
+        margin-bottom: 10px; /* Space between inputs */
+    }
+}

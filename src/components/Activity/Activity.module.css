@@ -1,0 +1,604 @@
+:root {
+    --font-xsmall: clamp(0.5rem, 0.7vw, 0.65rem);
+    /* Extra small text */
+    --font-small: clamp(0.65rem, 1vw, 0.75rem);
+    /* Small text */
+    --font-medium: clamp(0.75rem, 1.5vw, 1rem);
+    /* Medium text */
+    --font-large: clamp(1rem, 2vw, 1.25rem);
+    /* Large text */
+    --font-xlarge: clamp(1.25rem, 3vw, 2rem);
+    /* Extra-large text */
+}
+
+.activitiesSection {
+    padding: 40px 20px;
+    /* Add horizontal padding for smaller screens */
+    max-width: 1440px;
+    /* Limit container width */
+    margin: 0 auto;
+    /* Center the section */
+    box-sizing: border-box;
+    /* Include padding in the total width */
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.title {
+    font-size: 50px;
+    font-weight: 900;
+    color: #f8f8f8;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* Two-column layout for cards */
+.activitiesContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card {
+    display: flex;
+    height: 386.86px;
+    align-items: center;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card.reverse {
+    flex-direction: row-reverse;
+}
+
+/* Text section */
+.textContainer {
+    padding: 20px;
+    flex: 1;
+    color: #333;
+    text-align: center;
+}
+
+.activityTitle {
+    font-size: var(--font-xlarge);
+    font-weight: bold;
+    margin-bottom: 10px;
+    background: linear-gradient(to right, #690f1b, #b32538, #b32538, #720f1c);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.description {
+    font-size: var(--font-medium);
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.date {
+    font-size: var(--font-small);
+    color: #777;
+}
+
+.joinButton {
+    background: linear-gradient(to right, #690f1b, #b32538, #b32538, #720f1c);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    width: 50%;
+    border-radius: 5px;
+    font-size: var(--font-large);
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.joinButton:hover {
+    transform: scale(1.05);
+    background: linear-gradient(to right, #720f1c, #720f1c, #b32538);
+}
+
+/* Image section */
+.imageContainer {
+    flex: 1;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    /* Ensures the calendar is positioned over the image */
+    overflow: hidden;
+}
+
+.image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    /* Ensure the image scales smoothly */
+}
+
+/* On hover, scale the image */
+.card:hover .image {
+    transform: scale(1.05);
+}
+
+
+/* Calendar styles */
+.calendar {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 8px 12px;
+    border-radius: 8px;
+    text-align: center;
+    font-size: var(--font-small);
+    color: #333;
+}
+
+.calendarDate {
+    font-size: var(--font-large);
+    font-weight: bold;
+    display: block;
+}
+
+.calendarMonth {
+    font-size: var(--font-small);
+    color: #777;
+}
+
+.calendarTime {
+    font-size: var(--font-medium);
+    font-weight: 500;
+    color: #555;
+    display: block;
+    margin-top: 5px;
+}
+
+/* Modal overlay and layout */
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    /* Darker background for contrast */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    overflow: auto;
+}
+
+.modal {
+    height: 85%;
+    background-color: #fff;
+    border-radius: 12px;
+    /* Rounded corners for a smoother feel */
+    max-width: 900px;
+    width: 80%;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    /* Subtle shadow for a floating effect */
+    display: flex;
+    flex-direction: row;
+    overflow-y: auto;
+    /* Enable vertical scrolling */
+    position: relative;
+    /* Ensure it's relative for the close button's absolute positioning */
+}
+
+/* Optional styling for the scrollbar */
+.modal::-webkit-scrollbar {
+    width: 8px;
+    /* Set the width of the scrollbar */
+}
+
+.modal::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+    /* Color of the scrollbar thumb */
+}
+
+.modal::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+    /* Color of the scrollbar track */
+}
+
+
+.closeButton {
+    margin: 1%;
+    position: absolute;
+    /* Use absolute positioning */
+    top: 10px;
+    right: 10px;
+    /* Adjusted to the top-right of the modal */
+    font-size: 30px;
+    font-weight: bold;
+    background: linear-gradient(to right, #690f1b, #831221, #b32538);
+    padding: 6px 16px;
+    /* Add padding to all sides (adjust as needed) */
+    border-radius: 5px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    z-index: 1010;
+    /* Ensures it sits above other modal elements */
+    transition: color 0.3s ease;
+}
+
+.closeButton:hover {
+    background: linear-gradient(to right, #b32538, #831221, #690f1b);
+    /* Slight hover effect */
+}
+
+.modalContent {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 20px 10px;
+}
+
+.modalFormContainer {
+    flex: 1;
+    padding-right: 20px;
+    display: flex;
+    flex-direction: column;
+    color: #690f1b;
+}
+
+.modalTitle {
+    font-size: var(--font-xlarge);
+    font-weight: 700;
+    color: #690f1b;
+    margin-bottom: 20px;
+    text-align: left;
+    text-transform: capitalize;
+}
+
+.modalBookTitle {
+    font-size: var(--font-large);
+    font-weight: 700;
+    color: #690f1b;
+    margin-bottom: 20px;
+    text-align: left;
+    text-transform: capitalize;
+}
+
+.modalForm {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.formLabel {
+    font-size: var(--font-medium);
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+
+.inputField {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: var(--font-medium);
+    background: #f9f9f9;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.inputField:focus {
+    border-color: #921224;
+    box-shadow: 0 0 0 3px rgba(146, 18, 36, 0.3);
+    outline: none;
+    /* Subtle glow effect on focus */
+}
+
+.submitButton {
+    background: linear-gradient(to right, #690f1b, #831221, #b32538);
+    color: white;
+    padding: 14px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    font-size: var(--font-medium);
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-transform: uppercase;
+}
+
+.submitButton:hover {
+    background: linear-gradient(to right, #b32538, #831221, #690f1b);
+}
+
+.modalImageContainer {
+    flex: 1;
+    padding-left: 20px;
+    position: relative;
+    /* Ensure relative positioning for the close button */
+    height: 80%;
+    margin-bottom: -20%;
+}
+
+.modalImage {
+    width: 100%;
+    /* Make the image a bit smaller */
+    height: 50%;
+    border-radius: 12px;
+    object-fit: cover;
+    bottom: 54px;
+    /* Adjust this value to create space from the bottom */
+
+}
+
+
+.modalDescription {
+    color: #333;
+    font-size: var(--font-medium);
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.modalDetails {
+    font-size: var(--font-medium);
+    margin-bottom: 12px;
+    color: #555;
+    display: flex;
+    align-items: center;
+}
+
+.modalDetails .icon {
+    margin-right: 10px;
+    color: #690f1b;
+}
+
+
+
+.searchBar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto 20px;
+    padding: 10px;
+    border-radius: 5px;
+    background: linear-gradient(to right, #f5f5f5, #e0e0e0);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 2px solid #ddd;
+}
+
+.searchInput {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 12px 20px;
+    font-size: var(--font-large);
+    border-radius: 5px;
+    color: #333;
+    background: transparent;
+}
+
+.searchInput::placeholder {
+    color: #aaa;
+}
+
+.searchButton {
+    position: absolute;
+    right: 10px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    color: #333;
+    font-size: var(--font-large);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.searchButton:hover {
+    color: #0056b3;
+    transform: scale(1.1);
+}
+
+.clearButton {
+    position: absolute;
+    right: 10px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    color: #dc3545;
+    font-size: var(--font-large);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.clearButton:hover {
+    color: #a71d2a;
+    transform: scale(1.1);
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+    padding: 10px;
+    list-style: none;
+}
+
+.pagination .page {
+    display: inline-block;
+    padding: 8px 16px;
+    font-size: var(--font-medium);
+    font-weight: bold;
+    color: #555;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.pagination .page:hover {
+    background-color: #f0f0f0;
+    border-color: #bbb;
+}
+
+.pagination .active {
+    background-color: #921224;
+    color: #fff;
+    border-color: #690f1b;
+}
+
+.pagination .previous,
+.pagination .next {
+    font-weight: bold;
+    color: #921224;
+    border-color: transparent;
+    cursor: pointer;
+}
+
+.pagination .previous:hover,
+.pagination .next:hover {
+    color: #690f1b;
+}
+
+.noResults {
+    text-align: center;
+    padding: 40px 20px;
+    border-radius: 8px;
+    /* Rounded corners */
+    color: #555;
+    /* Text color */
+    font-size: var(--font-medium);
+    font-weight: 500;
+}
+
+.noResults p {
+    margin: 0;
+    color: #ffffff;
+    /* Red color to emphasize the 'no results' message */
+    font-size: var(--font-medium);
+    font-weight: bold;
+}
+
+.noResults a {
+    color: #690f1b;
+    /* Red to match the theme */
+    text-decoration: none;
+    /* Remove underline */
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.noResults a:hover {
+    color: #b32538;
+    /* Darker red when hovering */
+}
+
+.loading {
+    display: block;
+    margin: 30vh auto;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+
+    .activitiesSection {
+        padding: 15px 10px;
+        /* Minimal padding for compact devices */
+    }
+    .card {
+        flex-direction: column;
+    }
+
+    .card.reverse {
+        flex-direction: column;
+    }
+
+    .modal {
+        max-width: 95%;
+        width: 95%;
+        padding: 15px;
+        max-height: 70vh;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+        flex-direction: column;
+    }
+
+    .modalContent {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .modalFormContainer,
+    .modalImageContainer {
+        flex: 1;
+        padding: 0;
+    }
+
+    .pagination {
+        gap: 5px;
+        /* Reduce spacing between items */
+    }
+
+    .pagination .page,
+    .pagination .previous,
+    .pagination .next {
+        padding: 6px 10px;
+        /* Reduce padding */
+    }
+}
+
+@media (max-width: 480px) {
+    .activitiesSection {
+        padding: 15px 5px;
+        /* Minimal padding for compact devices */
+    }
+
+    .modal {
+        width: 100%;
+        /* Use full width for mobile */
+        max-width: 100%;
+        /* Prevent width from exceeding the screen */
+        padding: 10px;
+        /* Minimal padding for compact devices */
+        max-height: 65vh;
+        /* Ensure it fits in smaller viewports */
+        border-radius: 8px;
+        /* Reduce border radius for compact look */
+        box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+        /* Subtle shadow for mobile */
+    }
+
+    .pagination {
+        gap: 2px;
+        /* Minimize spacing further for very small screens */
+    }
+
+    .pagination .page,
+    .pagination .previous,
+    .pagination .next {
+        padding: 4px 8px;
+        /* Further reduce padding */
+    }
+}
+

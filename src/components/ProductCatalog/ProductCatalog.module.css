@@ -1,0 +1,109 @@
+.productsSection {
+    padding: 20px;
+    max-width: 1200px; /* Center the content and limit the width */
+    margin: auto; /* Centering the section */
+}
+
+.title {
+    font-size: 2.5rem; /* Larger title for better impact */
+    margin-bottom: 30px; /* More space below the title */
+    text-align: center;
+    color: #2c3e50; /* Darker text color */
+}
+
+.productsContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two products per row */
+    gap: 20px; /* Space between products */
+    padding: 10px; /* Padding for the container */
+}
+
+.card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px; /* Increased padding for more space */
+    text-align: center;
+    transition: box-shadow 0.3s;
+    height: auto; /* Allow dynamic height */
+    min-height: 400px; /* Minimum height to prevent overlap */
+}
+
+
+.card:hover {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+}
+
+.imageContainer {
+    height: 200px; /* Increased height for images */
+    overflow: hidden;
+    margin-bottom: 15px; /* Space below image */
+    border-radius: 8px; /* Rounded corners for images */
+    background-color: #eaeaea; /* Placeholder background color */
+}
+
+.image {
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* Maintain aspect ratio and fill */
+}
+
+.productName {
+    font-size: 1.8rem; /* Slightly larger font */
+    margin: 10px 0;
+    color: #34495e; /* Darker text color */
+}
+
+.price {
+    font-size: 1.5rem;
+    color: #27ae60; /* Green color for prices */
+    margin: 5px 0; /* Margin for spacing */
+}
+
+.description {
+    font-size: 1rem; /* Increase font size for better readability */
+    color: #666;
+    margin: 10px 0; /* Space around description */
+}
+
+.quantityInput {
+    width: 70px; /* Wider input */
+    padding: 5px; /* Padding for input */
+    border: 1px solid #ccc; /* Border for input */
+    border-radius: 4px; /* Rounded corners */
+    margin: 10px 0;
+}
+
+.addButton {
+    margin-left: 50px;
+    margin-top: 10px; /* Add margin above the button */
+    padding: 12px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: background-color 0.3s;
+}
+
+
+.addButton:hover {
+    background-color: #218838; /* Darker shade on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .productsContainer {
+        grid-template-columns: 1fr; /* Single column on smaller screens */
+        padding: 0; /* Remove padding for smaller screens */
+    }
+
+    .card {
+        height: auto; /* Allow height to be dynamic */
+    }
+
+    .title {
+        font-size: 2rem; /* Smaller title on mobile */
+    }
+}

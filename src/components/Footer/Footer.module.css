@@ -1,0 +1,192 @@
+.footer {
+    background-color: #152e58;
+    color: white;
+    padding: 40px 20px;
+    text-align: left;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.paragraph {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.contact,
+.email {
+    font-size: 0.9rem;
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon {
+    margin-right: 8px;
+    font-size: 1.2rem;
+}
+
+.icons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.icons a {
+    color: white;
+    font-size: 1.5rem;
+    transition: transform 0.3s, color 0.3s;
+}
+
+.icons a:hover {
+    transform: scale(1.2);
+    color: #921224;
+}
+
+.separator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 40px 0 20px;
+}
+
+.separatorIcon {
+    font-size: 1.5rem;
+    color: white;
+    margin-right: 10px;
+}
+
+.line {
+    flex: 1;
+    border: none;
+    border-top: 1px solid white;
+    height: 1px;
+}
+
+.creditsTitle {
+    font-weight: bold;
+    margin-top: 20px;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+}
+
+.developersList {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+}
+
+.developersList li {
+    margin: 5px 0;
+}
+
+@media (max-width: 425px) {
+    .footer {
+        padding: 20px 10px;
+    }
+
+    .title {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+    }
+
+    .paragraph {
+        font-size: 0.9rem;
+    }
+
+    .contact,
+    .email {
+        font-size: 0.8rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        text-align: left;
+        flex-wrap: nowrap;
+    }
+
+    .icons {
+        gap: 10px;
+    }
+
+    .contact .icon,
+    .email .icon {
+        flex-shrink: 0;
+    }
+
+    .icons a {
+        font-size: 1.2rem;
+    }
+
+    .separator {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .separatorIcon {
+        margin-right: 0;
+    }
+
+    .line {
+        width: 100%;
+    }
+
+    .creditsTitle {
+        font-size: 1rem;
+    }
+
+    .developersList li {
+        font-size: 0.9rem;
+    }
+}
+
+@media (min-width: 426px) and (max-width: 768px) {
+    .footer {
+        padding: 30px 15px;
+    }
+
+    .title {
+        font-size: 1.6rem;
+    }
+
+    .paragraph {
+        font-size: 0.95rem;
+    }
+
+    .contact,
+    .email {
+        font-size: 0.85rem;
+    }
+
+    .icons {
+        gap: 12px;
+    }
+
+    .icons a {
+        font-size: 1.3rem;
+    }
+
+    .separator {
+        gap: 15px;
+    }
+
+    .creditsTitle {
+        font-size: 1.05rem;
+    }
+
+    .developersList li {
+        font-size: 0.95rem;
+    }
+}

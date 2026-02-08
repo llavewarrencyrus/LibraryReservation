@@ -1,0 +1,166 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+    z-index: 2;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    padding: 0 5%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10%;
+}
+
+
+.logoContainer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo {
+    width: 60px;
+    height: auto;
+}
+
+.title {
+    font-size: 24px; /* Slightly reduced for better responsiveness */
+    font-weight: 600;
+    text-decoration: none;
+    color: #1B3C73;
+    transition: font-size 0.3s;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.menuItems {
+    display: flex;
+    gap: 30px; /* Reduced gap for smaller screens */
+    list-style: none;
+    align-items: center;
+    transition: gap 0.3s;
+    text-align: center;
+}
+
+.menuItems div {
+    font-size: 18px;
+    font-weight: 500;
+    color: #1B3C73;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: color 0.3s, background-color 0.3s;
+}
+
+.menuItems div.reserve {
+    background-color: #921224;
+    color: #ffffff;
+}
+
+.menuItems div:hover {
+    color: #ffffff;
+    background-color: #921224;
+}
+
+.menuItems div.active {
+    color: #ffffff;
+    background-color: #921224;
+}
+
+/* Remove default Link styling */
+.menuItems div a {
+    color: inherit; /* Inherit the text color from the parent div */
+    text-decoration: none;
+    font-size: inherit; /* Ensure font size is consistent */
+}
+
+.menuBtn {
+    width: 40px;
+    height: 40px;
+    display: none;
+    cursor: pointer;
+    background: url('menu-icon.svg') no-repeat center center;
+    background-size: contain;
+}
+
+
+@media screen and (max-width: 880px) {
+    .title{
+        font-size: 18px;
+    }
+    .navbar {
+        height: auto;
+        padding: 0 15px;
+    }
+
+    .title {
+        font-size: 18px;
+    }
+
+    .menu {
+        width: 50%;
+        justify-content: flex-end;
+    }
+
+    .menuBtn {
+        display: block;
+    }
+
+    .menuItems {
+        display: none;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start; /* Adjust alignment for better visuals */
+        gap: 15px;
+        background: #ffffff;
+        padding: 20px 15px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        z-index: 3;
+        border-radius: 8px;
+    }
+
+    .menuOpen {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 70%;
+    }
+
+    .menuItems div {
+        font-size: 16px;
+        padding: 10px 15px;
+        width: 100%; /* Make each menu item take full width */
+    }
+    
+}
+
+@media screen and (min-width: 881px) {
+    .menuBtn {
+        display: none;
+    }
+
+    .menuItems {
+        display: flex;
+    }
+    
+}
+@media screen and (max-width: 425px){
+    .menuOpen{
+        width: 90%;
+    }
+}
+@media screen and (max-width: 375px){
+    .menuOpen{
+        width: 120%;
+    }
+}

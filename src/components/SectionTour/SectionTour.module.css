@@ -1,0 +1,193 @@
+.sectionTour {
+    padding: 2.5rem;
+    background: linear-gradient(145deg, #f5f5f5, #eceaea);
+    text-align: center;
+    max-width: 100%;
+    margin: 0 auto;
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.05);
+}
+
+.title {
+    font-size: 50px;
+    font-weight: bold;
+    background: linear-gradient(45deg, #690f1b, #b32538, #741c26, #720f1c);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-align: center;
+    margin: 3% 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.title:hover {
+    transform: scale(1.02);
+}
+
+.carousel {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+    padding: 1rem;
+}
+
+.carouselContent {
+    width: 100%;
+    position: relative;
+    text-align: center;
+    transition: transform 0.5s ease-in-out;
+}
+
+.image {
+    width: 90%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+}
+
+.content {
+    margin-top: 1.5rem;
+    padding: 0 1rem;
+    transition: opacity 0.3s ease;
+}
+
+.slideTitle {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: #333;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.slideTitle:hover {
+    color: #690f1b;
+}
+
+.description {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.6;
+    transition: color 0.3s ease;
+}
+
+.navButton {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: #333;
+    cursor: pointer;
+    z-index: 10;
+    transition: transform 0.3s ease, color 0.3s ease;
+    padding: 1rem;
+    opacity: 0.7;
+}
+
+.navButton:hover {
+    color: #690f1b;
+    transform: scale(1.1);
+    opacity: 1;
+}
+
+.dots {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+.dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #ccc;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.dot:hover {
+    transform: scale(1.2);
+    background-color: #999;
+}
+
+.activeDot {
+    background-color: #690f1b;
+    transform: scale(1.2);
+    box-shadow: 0 0 8px rgba(105, 15, 27, 0.4);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .title {
+        font-size: 1.5rem;
+    }
+
+    .image {
+        max-height: 300px;
+    }
+
+    .slideTitle {
+        font-size: 1.2rem;
+    }
+
+    .description {
+        font-size: 0.9rem;
+    }
+
+    .navButton {
+        font-size: 1.5rem;
+    }
+
+    .dots {
+        margin-top: 0.75rem;
+    }
+
+    .dot {
+        width: 8px;
+        height: 8px;
+        margin: 0 3px;
+    }
+}
+
+@media (max-width: 480px) {
+    .sectionTour {
+        padding: 1.5rem;
+    }
+
+    .title {
+        font-size: 1.2rem;
+    }
+
+    .image {
+        max-height: 200px;
+    }
+
+    .slideTitle {
+        font-size: 1rem;
+    }
+
+    .description {
+        font-size: 0.8rem;
+    }
+
+    .navButton {
+        font-size: 1.2rem;
+        padding: 0.5rem;
+    }
+
+    .dot {
+        width: 6px;
+        height: 6px;
+        margin: 0 2px;
+    }
+}

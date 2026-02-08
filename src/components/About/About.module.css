@@ -1,0 +1,146 @@
+.aboutSection {
+    padding: 60px 20px;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.titleContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.title {
+    font-size: 3rem; /* Scales better for different screens */
+    font-weight: bold;
+    color: #1B3C73;
+    text-align: center;
+    margin: 0;
+}
+
+.contentContainer {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.imageContainer {
+    flex: 1.5;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 8px;
+    display: flex;
+    align-items: flex-end;
+}
+
+.image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.textContainer {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.missionContainer,
+.visionContainer {
+    background: linear-gradient(to right, #1B3C73, #2856a4);
+    color: #f4f4f4;
+    padding: 30px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.missionContainer:hover,
+.visionContainer:hover {
+    transform: translateY(-5px);
+}
+
+.subtitle {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #f4f4f4;
+    margin-bottom: 15px;
+}
+
+.paragraph {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #f4f4f4;
+    margin-bottom: 15px;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    .contentContainer {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .imageContainer, .textContainer {
+        flex: 1;
+        width: 100%;
+    }
+
+    .missionContainer, .visionContainer {
+        font-size: 1rem;
+        padding: 20px;
+    }
+
+    .subtitle {
+        font-size: 1.4rem;
+    }
+
+    .paragraph {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 2rem;
+    }
+
+    .missionContainer, .visionContainer {
+        padding: 15px;
+    }
+
+    .subtitle {
+        font-size: 1.2rem;
+    }
+
+    .paragraph {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 1.6rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+    }
+
+    .paragraph {
+        font-size: 0.85rem;
+    }
+
+    .missionContainer, .visionContainer {
+        padding: 10px;
+    }
+}

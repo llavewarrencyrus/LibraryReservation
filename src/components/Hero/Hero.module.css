@@ -1,0 +1,116 @@
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    height: 90vh;
+    text-align: center;
+    position: relative;
+    background: linear-gradient(to right, rgba(27, 60, 115, 1), rgba(27, 60, 115, 1)); /* Background color */
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.textContainer {
+    flex: 1;
+    margin-right: 20px;
+    margin-left: 30px;
+}
+
+.title {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+.icons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.icon {
+    font-size: 2rem;
+    color: #ffffff;
+    margin: 0 15px;
+    transition: transform 0.3s, color 0.3s;
+}
+
+.icon:hover {
+    transform: scale(1.2);
+    color: #921224;
+}
+
+.subtitle {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #45a7e9;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+.introduction {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-top: 10px;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+.imageContainer {
+    flex: 1;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    position: relative;
+    z-index: 0;
+    mask-image: linear-gradient(to left, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)); 
+    -webkit-mask-image: linear-gradient(to left, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)); 
+    mix-blend-mode: inherit; 
+}
+
+.imageFade {
+    display: none; 
+}
+
+@media (max-width: 880px) {
+    .image {
+        /* Remove the mask to unfade the image */
+        mask-image: none; 
+        -webkit-mask-image: none; 
+        mix-blend-mode: normal; /* Reset blend mode */
+    }
+    .hero {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .imageContainer {
+        margin-top: 20px;
+        height: 50vh; /* Adjusts height for smaller screens */
+    }
+
+    .image {
+        height: 100%;
+    }
+    .imageFade{
+        width: 100%;
+        height: 100%;
+        object-fit: cover; 
+        position: relative;
+        z-index: 0;
+    }
+    .hero{padding-top: 10%;}
+
+}
