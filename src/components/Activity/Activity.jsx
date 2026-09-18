@@ -25,7 +25,7 @@ const Activity = () => {
         const fetchActivities = async () => {
             try {
                 const response = await fetch(
-                    'https://api.sheetbest.com/sheets/85a9d105-b3fc-44a1-9bb1-4709504cc01b'
+                    process.env.ACTIVITY_SHEETBEST_API
                 );
                 if (response.ok) {
                     const data = await response.json();

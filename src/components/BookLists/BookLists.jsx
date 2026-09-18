@@ -38,7 +38,7 @@ const BookLists = () => {
     const getBookList = async () => {
         setIsLoading(true);
         try {
-            const res = await fetch('https://api.sheetbest.com/sheets/288fce7e-70da-4558-b018-d9e3e3470d84');
+            const res = await fetch(process.env.BOOKLIST_SHEETBEST_API);
             const data = await res.json();
             setBookListData(data || []);
             setIsLoading(false);
