@@ -11,6 +11,8 @@ import {
 import { getImageUrl } from '../../utils';
 
 const Activity = () => {
+    const apiUrl = import.meta.env.VITE_ACTIVITY_SHEETBEST_API;
+
     const [activities, setActivities] = useState([]);
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [selectedActivity, setSelectedActivity] = useState(null);
@@ -24,16 +26,14 @@ const Activity = () => {
     useEffect(() => {
         const fetchActivities = async () => {
             try {
-                const response = await fetch(
-                    process.env.ACTIVITY_SHEETBEST_API
-                );
+                const response = await fetch(apiUrl);
                 if (response.ok) {
                     const data = await response.json();
                     setActivities(data);
-                    setIsLoading(false); // Set to false when data is loaded
+                    setIsLoading(false);
                 } else {
                     console.error('Failed to fetch activities');
-                    setIsLoading(false); // Set to false if there's an error
+                    setIsLoading(false);
                 }
             } catch (error) {
                 console.error('Error fetching activities:', error);

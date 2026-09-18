@@ -13,6 +13,8 @@ import styles from './BookLists.module.css';
 import { getImageUrl } from "../../utils";
 
 const BookLists = () => {
+    const apiUrl = import.meta.env.VITE_BOOKLIST_SHEETBEST_API;
+
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [isListModalOpen, setIsListModalOpen] = useState(false);
 
@@ -38,9 +40,10 @@ const BookLists = () => {
     const getBookList = async () => {
         setIsLoading(true);
         try {
-            const res = await fetch(process.env.BOOKLIST_SHEETBEST_API);
+            const res = await fetch(apiUrl);
             const data = await res.json();
             setBookListData(data || []);
+            console.log(data);
             setIsLoading(false);
         } catch (error) {
             console.log(error);
